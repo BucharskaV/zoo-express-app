@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cute Zoo</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+<header>
+    <img src="https://www.sciencealert.com/images/2021-10/processed/PandasInATree_1024.jpg" alt="The group of pandas">
+    <h1>Cute Zoo</h1>
+    <div class="auth-buttons">
+        <a href="/register-zookeeper" class="button large">Register as zookeeper</a>
+        <a href="/register" class="button">Register</a>
+        <a href="/login" class="button">Login</a>
+        <a href="/logout" class="button">Logout</a>
+    </div>
+</header>
+<main>
+    <h1>Do you want to delete the zookeeper?</h1>
+    <form method="post" action="/zookeepers/delete/<%= zookeeper.Id %>">
+        <button type="submit" name="confirm" value="yes">Yes</button>
+        <button type="submit" name="confirm" value="no">No</button>
+    </form>
+</main>
+
+<footer>
+    <p>Vladyslava Bucharska</p>
+</footer>
+</body>
+</html>

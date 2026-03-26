@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cute Zoo</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/javascripts/validators/animalValidator.js" defer></script>
+</head>
+<body>
+<header>
+    <img src="https://www.sciencealert.com/images/2021-10/processed/PandasInATree_1024.jpg" alt="The group of pandas">
+    <h1>Cute Zoo</h1>
+    <div class="auth-buttons">
+        <a href="/register-zookeeper" class="button large">Register as zookeeper</a>
+        <a href="/register" class="button">Register</a>
+        <a href="/login" class="button">Login</a>
+        <a href="/logout" class="button">Logout</a>
+    </div>
+</header>
+
+<main>
+    <h1>Add new animal</h1>
+    <ul id="fErrors" class="error"></ul>
+    <form id="animalForm" onsubmit="return handleFormActions(event)">
+        <div class="for-input">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="for-input">
+            <label for="breed">Breed:</label>
+            <input type="text" name="breed" id="breed">
+        </div>
+        <div class="for-input">
+            <label for="zookeeper_id">Zookeeper:</label>
+            <input list="zookeepers" name="zookeeper_id" id="zookeeper_id">
+            <datalist id="zookeepers">
+                <% for (let temp of zookeepers) { %>
+                    <option value="<%= temp.Id %>">
+                        <%= temp.FirstName %> - <%= temp.LastName %> - Dept: <%= temp.Department %>
+                    </option>
+                <% } %>
+            </datalist>
+        </div>
+        <input type="submit" id="submit" value="Add">
+    </form>
+
+    <section>
+        <div class="links-to-lists">
+            <a href="/animals">Return to list of all animals</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Vladyslava Bucharska</p>
+</footer>
+</body>
+</html>

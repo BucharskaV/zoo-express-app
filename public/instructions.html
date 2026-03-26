@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cute Zoo</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+<header>
+  <img src="https://www.sciencealert.com/images/2021-10/processed/PandasInATree_1024.jpg" alt="The group of pandas">
+  <h1>Instructions</h1>
+  <div class="auth-buttons">
+    <a href="/register-zookeeper" class="button large">Register as zookeeper</a>
+    <a href="/register" class="button">Register</a>
+    <a href="/login" class="button">Login</a>
+    <a href="/logout" class="button">Logout</a>
+  </div>
+</header>
+<main>
+  <h2>Schema of database for Cute Zoo</h2>
+  <img class="schema" src="/images/schema.png">
+  <h2>Three roles: logged in user(U), guest (G), zookeeper (Z)</h2>
+  <h2>Different functionalities depending on user status/role with resource-level permissions</h2>
+  <p>
+    <ul>
+      <li>Register, register as zookeeper, login, logout (G)</li>
+      <li>Logout (U, Z)</li>
+      <li>See a list of all records for each table (G, U)</li>
+      <li>See a list of all records zookeepers and food (Z)</li>
+      <li>See a list of supervised animal and its permitted meals (Z)</li>
+      <li>See detailed views for each table (U, Z)</li>
+      <li>Perform adding, updating, deleting records to the database (U)</li>
+      <li>Has the permission to modify and delete data only about supervised animals (Z)</li>
+      <li>Has the permission to add and delete permitted meals only for supervised animals (Z)</li>
+    </ul>
+  </p>
+</main>
+
+<footer>
+  <img src="https://media.istockphoto.com/id/532529153/photo/alpacas.jpg?s=612x612&w=0&k=20&c=aVBIqadOqFHh_CsUUtF5C70KPib880X8bNawv2l7Ni8=" alt="Cute lamas">
+  <div>
+    <a class="instructions" href="/">Go back to main menu</a>
+    <p>Vladyslava Bucharska</p>
+  </div>
+  <img src="https://media.istockphoto.com/id/993952822/photo/animal-mammal-hippo-mother-baby-young-born-grass-wildlife-africa-nature-savanna-water.jpg?s=612x612&w=0&k=20&c=XChNEjSJy4mrpjAj5uOUN8VuQNfJaHccrQlXgA8_y2U=" alt="Cute hippos">
+</footer>
+</body>
+</html>

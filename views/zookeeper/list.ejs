@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cute Zoo</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+<header>
+    <img src="https://www.sciencealert.com/images/2021-10/processed/PandasInATree_1024.jpg" alt="The group of pandas">
+    <h1>Cute Zoo</h1>
+    <div class="auth-buttons">
+        <a href="/register-zookeeper" class="button large">Register as zookeeper</a>
+        <a href="/register" class="button">Register</a>
+        <a href="/login" class="button">Login</a>
+        <a href="/logout" class="button">Logout</a>
+    </div>
+</header>
+
+<main id="main">
+    <div id="zookepers">
+        <h1>Zookeepers</h1>
+        <a href="/zookeepers/add"><img class="actions" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_UFODWiEEkQDE_UNyLm_QcYIjkbca8cjQGg&s" alt="Add new item image"></a>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+            <% for (let z of zookeepers) { %>
+                <tr>
+                    <td><%= z.Id %></td>
+                    <td><%= z.FirstName %></td>
+                    <td><%= z.LastName %></td>
+                    <td><%= z.Department %></td>
+                    <td class="actions">
+                        <a href="/zookeepers/<%= z.Id %>"><img class="actions" src="https://icon2.cleanpng.com/20180319/trq/avexs1y3m.webp" alt="View details image"></a>
+                        <a href="/zookeepers/edit/<%= z.Id %>"><img class="actions" src="https://static.vecteezy.com/system/resources/previews/016/721/493/non_2x/edit-line-color-background-icon-vector.jpg" alt="Edit image"></a>
+                        <a href="/zookeepers/delete/<%= z.Id %>"><img class="actions" src="https://png.pngtree.com/background/20240302/original/pngtree-trash-can-flat-yellow-color-icon-raster-glyph-basket-photo-picture-image_7920729.jpg" alt="Delete image"></a>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+    <div>
+        <ul class="pagination">
+            <% if (page > 1) { %>
+                <li><a href="/zookeepers?page=<%= page - 1 %>"><-&nbsp;</a></li>
+            <% } else { %>
+                <li><a class="disabled"><-&nbsp;</a></li>
+            <% } %>
+
+            <% for (let i = 1; i <= totalPages; i++) { %>
+                <% if (i === page) { %>
+                    <li><a class="active"><%= i %>&nbsp;</a></li>
+                <% } else { %>
+                    <li><a href="/zookeepers?page=<%= i %>"><%= i %>&nbsp;</a></li>
+                <% } %>
+            <% } %>
+
+            <% if (page < totalPages) { %>
+                <li><a href="/zookeepers?page=<%= page + 1 %>">&nbsp;-></a></li>
+            <% } else { %>
+                <li><a class="disabled">&nbsp;-></a></li>
+            <% } %>
+        </ul>
+    </div>
+
+    <section>
+        <div class="links-to-lists">
+            <a href="/">Return to main menu</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <img src="https://media.istockphoto.com/id/532529153/photo/alpacas.jpg?s=612x612&w=0&k=20&c=aVBIqadOqFHh_CsUUtF5C70KPib880X8bNawv2l7Ni8=" alt="Cute lamas">
+    <div>
+        <a href="/instruction" class="instructions">Click to see instructions</a>
+        <p>Vladyslava Bucharska</p>
+    </div>
+    <img src="https://media.istockphoto.com/id/993952822/photo/animal-mammal-hippo-mother-baby-young-born-grass-wildlife-africa-nature-savanna-water.jpg?s=612x612&w=0&k=20&c=XChNEjSJy4mrpjAj5uOUN8VuQNfJaHccrQlXgA8_y2U=" alt="Cute hippos">
+</footer>
+</body>
+</html>

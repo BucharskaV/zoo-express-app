@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cute Zoo</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+<header>
+    <img src="https://www.sciencealert.com/images/2021-10/processed/PandasInATree_1024.jpg" alt="The group of pandas">
+    <h1>Cute Zoo</h1>
+    <div class="auth-buttons">
+        <a href="/register-zookeeper" class="button large">Register as zookeeper</a>
+        <a href="/register" class="button">Register</a>
+        <a href="/login" class="button">Login</a>
+        <a href="/logout" class="button">Logout</a>
+    </div>
+</header>
+
+<main>
+    <h1>View detailed info about selected meal</h1>
+    <section class="meal-info">
+                <table>
+                    <tr>
+                        <th>Animal Name</th>
+                        <th>Animal Breed</th>
+                        <th>Zookeeper</th>
+                        <th>Food</th>
+                        <th>Food Calories</th>
+                        <th>Quantity</th>
+                    </tr>
+                    <% meals.forEach(meal => { %>
+                        <tr>
+                            <td><%= meal.Animal.Name %></td>
+                            <td><%= meal.Animal.Breed %></td>
+                            <td><a href="/zookeepers/<%= meal.Animal.Zookeeper.Id %>"><img class="actions" src="https://icon2.cleanpng.com/20180319/trq/avexs1y3m.webp" alt="View details image"></a></td>
+                            <td><%= meal.Food.Name %></td>
+                            <td><%= meal.Food.Calories %></td>
+                            <td><%= meal.Quantity %></td>
+                        </tr>
+                    <% }); %>
+                </table>
+    </section>
+
+    <section>
+        <div class="links-to-lists">
+            <a href="/meals">Return to list of all permitted meals</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Vladyslava Bucharska</p>
+</footer>
+</body>
+</html>

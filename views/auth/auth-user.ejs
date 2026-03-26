@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cute Zoo</title>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <script src="/javascripts/validators/userRegistrationValidator.js" defer></script>
+</head>
+<body>
+<header>
+    <img src="https://www.sciencealert.com/images/2021-10/processed/PandasInATree_1024.jpg" alt="The group of pandas">
+    <h1>Welcome to Cute Zoo!</h1>
+    <div class="auth-buttons">
+        <a href="/register-zookeeper" class="button large">Register as zookeeper</a>
+        <a href="/register" class="button">Register</a>
+        <a href="/login" class="button">Login</a>
+        <a href="/logout" class="button">Logout</a>
+    </div>
+</header>
+<main>
+    <h1><%= text %></h1>
+    <ul id="fErrors" class="error"></ul>
+
+    <form id="userForm" onsubmit="return handleFormActions(event)" data-action="<%= action %>">
+        <div class="for-input">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username">
+        </div>
+        <div class="for-input">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <% if (zookeepers?.length) { %>
+            <div class="for-input">
+                <label for="zookeeper_id">Zookeeper:</label>
+                <input list="zookeepers" name="zookeeper_id" id="zookeeper_id">
+                <datalist id="zookeepers">
+                    <% for (let temp of zookeepers) { %>
+                        <option value="<%= temp.Id %>">
+                            <%= temp.FirstName %> - <%= temp.LastName %> - Dept: <%= temp.Department %>
+                        </option>
+                    <% } %>
+                </datalist>
+            </div>
+        <% } %>
+        <input type="submit" id="submit" value="<%= action %>">
+    </form>
+
+</main>
+
+<footer>
+    <img src="https://media.istockphoto.com/id/532529153/photo/alpacas.jpg?s=612x612&w=0&k=20&c=aVBIqadOqFHh_CsUUtF5C70KPib880X8bNawv2l7Ni8=" alt="Cute lamas">
+    <div>
+        <a href="/instruction" class="instructions">Click to see instructions</a>
+        <p>Vladyslava Bucharska</p>
+    </div>
+    <img src="https://media.istockphoto.com/id/993952822/photo/animal-mammal-hippo-mother-baby-young-born-grass-wildlife-africa-nature-savanna-water.jpg?s=612x612&w=0&k=20&c=XChNEjSJy4mrpjAj5uOUN8VuQNfJaHccrQlXgA8_y2U=" alt="Cute hippos">
+</footer>
+</body>
+</html>

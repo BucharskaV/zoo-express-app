@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cute Zoo</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+<header>
+    <img src="https://www.sciencealert.com/images/2021-10/processed/PandasInATree_1024.jpg" alt="The group of pandas">
+    <h1>Cute Zoo</h1>
+    <div class="auth-buttons">
+        <a href="/register-zookeeper" class="button large">Register as zookeeper</a>
+        <a href="/register" class="button">Register</a>
+        <a href="/login" class="button">Login</a>
+        <a href="/logout" class="button">Logout</a>
+    </div>
+</header>
+
+<main>
+    <h1>View detailed info about selected animal</h1>
+    <section class="animal-info">
+        <table>
+            <tr>
+                <th>Id</th>
+                <td><%= animal.Id %></td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td><%= animal.Name %></td>
+            </tr>
+            <tr>
+                <th>Breed</th>
+                <td><%= animal.Breed %></td>
+            </tr>
+            <tr>
+                <th>Zookeeper</th>
+                <td><a href="/zookeepers/<%= animal.Zookeeper.Id %>"><img class="actions" src="https://icon2.cleanpng.com/20180319/trq/avexs1y3m.webp" alt="View details image"></a></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="animal-meal">
+        <h2>Permitted meal</h2>
+        <% if (animal.Foods.length > 0) { %>
+            <table>
+                <tr>
+                    <th>Food Name</th>
+                    <th>Calories</th>
+                    <th>Quantity</th>
+                </tr>
+                <% animal.Foods.forEach(food => { %>
+                    <tr>
+                        <td><%= food.Name %></td>
+                        <td><%= food.Calories %></td>
+                        <td><%= food.Quantity %></td>
+                    </tr>
+                <% }); %>
+            </table>
+        <% } else { %>
+            <p>No permitted foods found for this animal.</p>
+        <% } %>
+    </section>
+
+    <section>
+        <div class="links-to-lists">
+            <a href="/animals">Return to list of all animals</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Vladyslava Bucharska</p>
+</footer>
+</body>
+</html>

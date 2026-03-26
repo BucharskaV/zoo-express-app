@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cute Zoo</title>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <script src="/javascripts/validators/zookeeperValidator.js" defer></script>
+</head>
+<body>
+<header>
+    <img src="https://www.sciencealert.com/images/2021-10/processed/PandasInATree_1024.jpg" alt="The group of pandas">
+    <h1>Cute Zoo</h1>
+    <div class="auth-buttons">
+        <a href="/register-zookeeper" class="button large">Register as zookeeper</a>
+        <a href="/register" class="button">Register</a>
+        <a href="/login" class="button">Login</a>
+        <a href="/logout" class="button">Logout</a>
+    </div>
+</header>
+
+<main>
+    <h1>Add new zookeeper</h1>
+    <ul id="fErrors" class="error"></ul>
+
+    <form id="zookeeperForm" onsubmit="return handleFormActions(event)">
+        <div class="for-input">
+            <label for="firstName">First name:</label>
+            <input type="text" name="firstName" id="firstName">
+        </div>
+        <div class="for-input">
+            <label for="lastName">Last name:</label>
+            <input type="text" name="lastName" id="lastName">
+        </div>
+        <div class="for-input">
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" maxlength="1">
+        </div>
+        <input type="submit" id="submit" value="Add">
+    </form>
+
+
+    <section>
+        <div class="links-to-lists">
+            <a href="/zookeepers">Return to list of all zookeepers</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Vladyslava Bucharska</p>
+</footer>
+</body>
+</html>

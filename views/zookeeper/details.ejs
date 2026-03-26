@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cute Zoo</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+<header>
+    <img src="https://www.sciencealert.com/images/2021-10/processed/PandasInATree_1024.jpg" alt="The group of pandas">
+    <h1>Cute Zoo</h1>
+    <div class="auth-buttons">
+        <a href="/register-zookeeper" class="button large">Register as zookeeper</a>
+        <a href="/register" class="button">Register</a>
+        <a href="/login" class="button">Login</a>
+        <a href="/logout" class="button">Logout</a>
+    </div>
+</header>
+
+<main>
+    <h1>View detailed info about selected zookeeper</h1>
+    <section class="zookeeper-info">
+        <table>
+            <tr>
+                <th>Id</th>
+                <td><%= zookeeper.Id %></td>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <td><%= zookeeper.FirstName %></td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td><%= zookeeper.LastName %></td>
+            </tr>
+            <tr>
+                <th>Department</th>
+                <td><%= zookeeper.Department %></td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="zookeeper-animals">
+        <h2>Animals</h2>
+        <% if (zookeeper.Animals.length > 0) { %>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Breed</th>
+                    <th>Permitted meals</th>
+                </tr>
+                <% zookeeper.Animals.forEach(animal => { %>
+                    <tr>
+                        <td><%= animal.Name %></td>
+                        <td><%= animal.Breed %></td>
+                        <td><a href="/meals/<%= animal.Id %>"><img class="actions" src="https://icon2.cleanpng.com/20180319/trq/avexs1y3m.webp" alt="View details image"></a></td>
+                    </tr>
+                <% }); %>
+            </table>
+        <% } else { %>
+            <p>No animals are supervised by this zookeeper.</p>
+        <% } %>
+    </section>
+
+    <section>
+        <div class="links-to-lists">
+            <a href="/zookeepers">Return to list of all zookeepers</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Vladyslava Bucharska</p>
+</footer>
+</body>
+</html>

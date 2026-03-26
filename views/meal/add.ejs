@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cute Zoo</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/javascripts/validators/mealValidator.js" defer></script>
+</head>
+<body>
+<header>
+    <img src="https://www.sciencealert.com/images/2021-10/processed/PandasInATree_1024.jpg" alt="The group of pandas">
+    <h1>Cute Zoo</h1>
+    <div class="auth-buttons">
+        <a href="/register-zookeeper" class="button large">Register as zookeeper</a>
+        <a href="/register" class="button">Register</a>
+        <a href="/login" class="button">Login</a>
+        <a href="/logout" class="button">Logout</a>
+    </div>
+</header>
+
+<main>
+    <h1>Add new permitted meal for the animal</h1>
+    <ul id="fErrors" class="error"></ul>
+    <form id="mealForm" onsubmit="return handleFormActions(event)">
+        <div class="for-input">
+            <label for="animal_id">Animal:</label>
+            <input list="animals" name="animal_id" id="animal_id">
+            <datalist id="animals">
+                <% for (let temp of animals) { %>
+                    <option value="<%= temp.Id %>">
+                        <%= temp.Name %> - <%= temp.Breed %>
+                    </option>
+                <% } %>
+            </datalist>
+        </div>
+        <div class="for-input">
+            <label for="food_id">Food:</label>
+            <input list="food" name="food_id" id="food_id">
+            <datalist id="food">
+                <% for (let temp of food) { %>
+                    <option value="<%= temp.Id %>">
+                        <%= temp.Name %> - <%= temp.Calories %> calories
+                    </option>
+                <% } %>
+            </datalist>
+        </div>
+        <div class="for-input">
+            <label for="quantity">Quantity:</label>
+            <input type="text" name="quantity" id="quantity">
+        </div>
+        <input type="submit" id="submit" value="Add">
+    </form>
+
+    <section>
+        <div class="links-to-lists">
+            <a href="/meals">Return to list of all permitted meals</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Vladyslava Bucharska</p>
+</footer>
+</body>
+</html>

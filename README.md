@@ -6,11 +6,15 @@ A full-stack Zoo Management Web Application built with Express.js, SQLite, and s
    https://github.com/BucharskaV/zoo-express-app.git
    ```
 2. Run app.js file
+3. Access
+   ```bash
+   http://localhost:3000/
+   ```
 # Database schema
 <img width="841" height="369" alt="TIN_Project_Physical_Export-2026-03-26_20-37" src="https://github.com/user-attachments/assets/780f8381-7eba-49c4-9fce-c5f50c8bc052" />
 
 # Used technoloqies & techniques:
-- CRUD operations
+- CRUD operations, including resource-level permissions 
 - Backend: Express.js, SQLite
 - Bcrypt - hashing
 - Authentication (login/register system)
@@ -21,6 +25,13 @@ A full-stack Zoo Management Web Application built with Express.js, SQLite, and s
 - Repository pattern
 - Client-side and server-side validation
 - Error handling middleware
+
+# Preview
+<img width="1884" height="903" alt="image" src="https://github.com/user-attachments/assets/991a54d1-f34a-4c65-896a-cc917f8e9fca" />
+<img width="1897" height="916" alt="image" src="https://github.com/user-attachments/assets/afeb4113-3af6-452f-8629-3bfabe52ff8f" />
+<img width="1875" height="907" alt="image" src="https://github.com/user-attachments/assets/aa8e9d77-0687-446b-838c-c977da83e888" />
+<img width="1896" height="894" alt="image" src="https://github.com/user-attachments/assets/4f07aa80-f644-42d3-9f70-b47ce9898e93" />
+
 # License
 MIT License
 

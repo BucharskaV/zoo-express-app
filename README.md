@@ -1,4 +1,4 @@
-# Zoo Managment Web Express.js application
+# Zoo Management Web Express.js application
 A full-stack Zoo Management Web Application built with Express.js, SQLite, and server-side rendered views. The system allows managing animals, zookeepers, food, and feeding relationships with authentication, authorization, and pagination.
 # Installation instructions
 1. Clone repository
